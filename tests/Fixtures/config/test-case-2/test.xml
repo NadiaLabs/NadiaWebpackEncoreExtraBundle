@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:sec="http://nadialabs.com.tw/schema/dic/webpack-encore-extra"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd
+                        http://symfony.com/schema/dic/symfony https://symfony.com/schema/dic/symfony/symfony-1.0.xsd">
+    <sec:config>
+        <sec:default_build entry_name_prefix="foo" package_name="bar">
+            <sec:controller_class_name_prefix>App\Controller\ClassNamePrefix1</sec:controller_class_name_prefix>
+            <sec:controller_class_name_prefix>App\Admin\Controller\ClassNamePrefix2</sec:controller_class_name_prefix>
+
+            <sec:file_tree_depth controller_class_name_prefix="App\Controller\ClassNamePrefix1\SubFolder1">
+                2
+            </sec:file_tree_depth>
+            <sec:file_tree_depth controller_class_name_prefix="App\Controller\ClassNamePrefix1\SubFolder2\SubFolder3">
+                3
+            </sec:file_tree_depth>
+        </sec:default_build>
+    </sec:config>
+</container>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns="http://nadialabs.com.tw/schema/dic/webpack-encore-extra"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://nadialabs.com.tw/schema/dic/webpack-encore-extra"
+            elementFormDefault="qualified">
+
+    <xsd:element name="config" type="config" />
+
+    <xsd:complexType name="config">
+        <xsd:sequence>
+            <xsd:element name="default_build" type="build" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="build" type="build" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="build">
+        <xsd:sequence>
+            <xsd:element name="controller_class_name_prefix" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="file_tree_depth" type="file_tree_depth" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="encore_build_name" type="xsd:string" />
+        <xsd:attribute name="entry_name_prefix" type="xsd:string" />
+        <xsd:attribute name="package_name" type="xsd:string" />
+    </xsd:complexType>
+
+    <xsd:complexType name="file_tree_depth" mixed="true">
+        <xsd:attribute name="controller_class_name_prefix" type="xsd:string" />
+    </xsd:complexType>
+</xsd:schema>

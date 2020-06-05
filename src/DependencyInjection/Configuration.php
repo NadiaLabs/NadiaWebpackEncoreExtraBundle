@@ -53,6 +53,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
                 ->arrayNode('builds')
+                    ->useAttributeAsKey('encore_build_name', false)
                     ->arrayPrototype()
                         ->fixXmlConfig('controller_class_name_prefix', 'controller_class_name_prefixes')
                         ->fixXmlConfig('file_tree_depth')

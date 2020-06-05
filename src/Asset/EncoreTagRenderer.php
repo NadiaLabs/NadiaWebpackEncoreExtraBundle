@@ -183,7 +183,9 @@ class EncoreTagRenderer
     private function generateWebpackEntryName($controller, $routeName, array $build)
     {
         $entryNamePrefix = $build['entry_name_prefix'];
-        $parts = explode('\\', str_replace($build['controller_class_name_prefix'], '', $controller));
+        $controllerSuffix = str_replace($build['controller_class_name_prefix'], '', $controller);
+        $controllerSuffix = trim($controllerSuffix, '\\ ');
+        $parts = explode('\\', $controllerSuffix);
 
         if (count($parts) <= self::DEFAULT_FILE_TREE_DEPTH) {
             return $entryNamePrefix . $routeName;

@@ -1,0 +1,15 @@
+parameters:
+
+services:
+    Nadia\Bundle\NadiaWebpackEncoreExtraBundle\Asset\EncoreTagRenderer:
+        arguments:
+            - '@request_stack'
+            - '@webpack_encore.tag_renderer'
+            - []
+
+    Nadia\Bundle\NadiaWebpackEncoreExtraBundle\Twig\Extension\AssetExtension:
+        arguments:
+            - '@jms_serializer'
+            - '@Nadia\Bundle\NadiaWebpackEncoreExtraBundle\Asset\EncoreTagRenderer'
+        tags:
+            - { name: twig.extension }

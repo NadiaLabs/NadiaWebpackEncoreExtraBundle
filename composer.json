@@ -6,7 +6,7 @@
     "require": {
         "php": "^7.1",
         "ext-json": "*",
-        "jms/serializer-bundle": "^2.3",
+        "jms/serializer-bundle": "^2.3|^3.0",
         "symfony/dependency-injection": "^3.4|^4.0",
         "symfony/framework-bundle": "^3.4|^4.0",
         "symfony/webpack-encore-bundle": "^1.1",

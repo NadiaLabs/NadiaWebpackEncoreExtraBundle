@@ -166,7 +166,7 @@ class EncoreTagRenderer
 
         return [
             'entry_name' => $entryName,
-            'package_name' => $build['package_name'],
+            'package_name' => empty($build['package_name']) ? null : $build['package_name'],
             'entry_point_name' => $build['encore_build_name'],
         ];
     }

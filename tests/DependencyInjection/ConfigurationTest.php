@@ -48,6 +48,7 @@ class ConfigurationTest extends TestCase
     public function configDataProvider()
     {
         return [
+            // Case 1
             [
                 ['default_build' => null],
                 [
@@ -60,6 +61,7 @@ class ConfigurationTest extends TestCase
                     'builds' => [],
                 ]
             ],
+            // Case 2
             [
                 [
                     'default_build' => [
@@ -91,7 +93,9 @@ class ConfigurationTest extends TestCase
                     'builds' => [],
                 ]
             ],
+            // Case 3
             [
+                // $testConfig
                 [
                     'builds' => [
                         'foo' => [
@@ -112,16 +116,17 @@ class ConfigurationTest extends TestCase
                             'entry_name_prefix' => 'bar',
                             'package_name' => 'foo',
                             'controller_class_name_prefixes' => [
-                                'App\Controller\ClassNamePrefix1',
-                                'App\Admin\Controller\ClassNamePrefix2',
+                                'App\Controller\ClassNamePrefix3',
+                                'App\Admin\Controller\ClassNamePrefix4',
                             ],
                             'file_tree_depths' => [
-                                'App\Controller\ClassNamePrefix1\SubFolder1' => 2,
-                                'App\Controller\ClassNamePrefix1\SubFolder2\SubFolder3' => 3,
+                                'App\Controller\ClassNamePrefix5\SubFolder4' => 2,
+                                'App\Controller\ClassNamePrefix5\SubFolder5\SubFolder6' => 3,
                             ],
                         ],
                     ]
                 ],
+                // $expectedConfig
                 [
                     'builds' => [
                         'foo' => [
@@ -142,12 +147,12 @@ class ConfigurationTest extends TestCase
                             'entry_name_prefix' => 'bar',
                             'package_name' => 'foo',
                             'controller_class_name_prefixes' => [
-                                'App\Controller\ClassNamePrefix1',
-                                'App\Admin\Controller\ClassNamePrefix2',
+                                'App\Controller\ClassNamePrefix3',
+                                'App\Admin\Controller\ClassNamePrefix4',
                             ],
                             'file_tree_depths' => [
-                                'App\Controller\ClassNamePrefix1\SubFolder1' => 2,
-                                'App\Controller\ClassNamePrefix1\SubFolder2\SubFolder3' => 3,
+                                'App\Controller\ClassNamePrefix5\SubFolder4' => 2,
+                                'App\Controller\ClassNamePrefix5\SubFolder5\SubFolder6' => 3,
                             ],
                         ],
                     ],

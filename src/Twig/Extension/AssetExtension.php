@@ -76,8 +76,8 @@ class AssetExtension extends AbstractExtension
      */
     public function renderPhpDataAsJavascript(array $data = [], $phpDataVariableName = 'PhpData')
     {
-        $data = (object) $data;
         $object = $this->serializer->serialize($data, 'json');
+        $object = $object === '[]' ? '{}' : $object;
         $variableName = json_encode($phpDataVariableName);
 
         return <<<JS
